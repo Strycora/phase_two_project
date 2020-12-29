@@ -1,0 +1,27 @@
+<h1 class='red-text darken-5'> Edit <%= @dragon.name %> </h1>
+
+<form action="/dragons/<%= @dragon.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+        <div class="input-field">
+          <input id="name" name="dragon[name]" type="text" class="validate" value="<%= @dragon.name%>">
+          <label for="dragon[name]">Name</label>
+        </div>
+        <div class="input-field">
+          <input id="color" name="dragon[color]" type="text" class="validate" value="<%=@dragon.color%>">
+          <label for="color">Color</label>
+        </div>
+        <div class="input-field">
+          <input id="breed]" name="dragon[breed]" type="text" class="validate" value="<%=@dragon.breed%>">
+          <label for="breed">Breed</label>
+        </div>
+        <div class="input-field">
+          <input id="personality" name="dragon[personality]" type="text" class="validate" value=<%=@dragon.personality%>>
+          <label for="personality">Personality</label>
+        </div>
+        <div class="input-field">
+          <input id="treasure" name="dragon[treasure]" type="text" class="validate" value=<%=@dragon.treasure%>>
+          <label for="treasure">Treasure</label>
+        </div>
+
+        <input type="submit" value="Update Dragon" class="btn red darken-5">
+</form>

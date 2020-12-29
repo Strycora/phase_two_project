@@ -1,0 +1,7 @@
+<h3>Dragon List </h3>
+
+<ul>
+  <% @dragons.each do |dragon| %>
+    <li><a href="/dragons/<%= dragon.id%>"> <%=dragon.name%></a></li>
+  <%end%>
+</ul>
