@@ -11,8 +11,8 @@ class DragonsController < ApplicationController
   end
 
   get '/dragons/:id' do 
-    session[:dragon_id] = @dragon.id if @dragon
     find_dragon
+    session[:dragon_id] = @dragon.id if @dragon
     redirect_if_not_found
     erb :'dragons/show'
   end
