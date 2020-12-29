@@ -29,6 +29,15 @@ class DragonsController < ApplicationController
     end
   end
 
+  patch "/dragons/:id" do
+    find_dragon
+    if @dragon.update(params[:dragon])
+      redirect "/dragons/#{@dragon.id}"
+    else
+      redirect "/dragons/#{@dragon.id}/edit"
+    end
+  end
+
   private
 
   def find_dragon
