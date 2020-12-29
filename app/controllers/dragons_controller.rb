@@ -29,7 +29,7 @@ class DragonsController < ApplicationController
     end
   end
 
-  patch "/dragons/:id" do
+  patch '/dragons/:id' do
     find_dragon
     if @dragon.update(params[:dragon])
       redirect "/dragons/#{@dragon.id}"
@@ -37,6 +37,13 @@ class DragonsController < ApplicationController
       redirect "/dragons/#{@dragon.id}/edit"
     end
   end
+
+  delete '/dragons/:id' do
+    find_dragon
+    @dragon.destroy if @dragon
+    redirect '/dragons'
+  end
+      
 
   private
 

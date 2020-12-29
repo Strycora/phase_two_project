@@ -4,4 +4,9 @@
 <p>Personality: <%= @dragon.personality%> </p>
 <p>Treasure: <%= @dragon.treasure %> </p>
 
-<a href="/dragons/<%= @dragon.id %>/edit">Edit</a>
+<a href="/dragons/<%= @dragon.id %>/edit" class="btn">Edit</a> &nbsp;
+
+<form action="/dragons/<%=@dragon.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Dragon" class="btn red darken-7">
+</form>
