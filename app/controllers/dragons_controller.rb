@@ -2,6 +2,7 @@ class DragonsController < ApplicationController
 
   get '/dragons' do 
     @dragons = Dragon.all
+    @dragon = Dragon.find_by_id(session[:dragon_id])
     erb :'dragons/index'
   end
 
@@ -10,14 +11,17 @@ class DragonsController < ApplicationController
   end
 
   get '/dragons/:id' do 
+    session[:dragon_id] = @dragon.id if @dragon
     find_dragon
+    redirect_if_not_found
     erb :'dragons/show'
   end
   
   get '/dragons/:id/edit' do
     find_dragon
+    redirect_if_not_found
     erb :'dragons/edit'
-  end
+  end 
 
   post '/dragons' do
     dragon = Dragon.new(params[:dragon])
@@ -31,6 +35,7 @@ class DragonsController < ApplicationController
 
   patch '/dragons/:id' do
     find_dragon
+    redirect_if_not_found
     if @dragon.update(params[:dragon])
       redirect "/dragons/#{@dragon.id}"
     else
@@ -49,6 +54,10 @@ class DragonsController < ApplicationController
 
   def find_dragon
     @dragon = Dragon.find_by_id(params[:id])
+  end
+
+  def redirect_if_not_found
+    redirect '/dragons' unless @dragon
   end
 
 end

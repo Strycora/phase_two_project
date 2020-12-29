@@ -1,5 +1,7 @@
 <h3>Dragon List </h3>
 
+<p>Recently Viewed: <%=@dragon ? @dragon.name : "Haven't viewed any dragons."%></p>
+
 <ul>
   <% @dragons.each do |dragon| %>
     <li><a href="/dragons/<%= dragon.id%>"> <%=dragon.name%></a></li>
