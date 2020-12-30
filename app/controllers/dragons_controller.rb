@@ -2,7 +2,8 @@ class DragonsController < ApplicationController
 
   get '/dragons' do 
     @dragons = Dragon.all
-    @dragon = Dragon.find_by_id(session[:dragon_id])
+    find_dragon
+    @user = current_user
     erb :'dragons/index'
   end
 
@@ -14,18 +15,20 @@ class DragonsController < ApplicationController
     find_dragon
     session[:dragon_id] = @dragon.id if @dragon
     redirect_if_not_found
+    redirect_if_not_owner
     erb :'dragons/show'
   end
   
   get '/dragons/:id/edit' do
     find_dragon
     redirect_if_not_found
+    redirect_if_not_owner
     erb :'dragons/edit'
   end 
 
   post '/dragons' do
-    dragon = Dragon.new(params[:dragon])
-
+    dragon = Dragon.create(name: params[:dragon][:name], color: params[:dragon][:color], breed: params[:dragon][:breed], personality: params[:dragon][:personality], treasure: params[:dragon][:treasure],  user_id: current_user.id)
+    session[:dragon_id] = dragon.id
     if dragon.save
       redirect '/dragons'
     else
@@ -36,6 +39,7 @@ class DragonsController < ApplicationController
   patch '/dragons/:id' do
     find_dragon
     redirect_if_not_found
+    redirect_if_not_owner
     if @dragon.update(params[:dragon])
       redirect "/dragons/#{@dragon.id}"
     else
@@ -53,11 +57,15 @@ class DragonsController < ApplicationController
   private
 
   def find_dragon
-    @dragon = Dragon.find_by_id(params[:id])
+    # @dragon = Dragon.find_by_id(params[:id])
+    @dragon = Dragon.find_by_id(session[:dragon_id])
   end
 
   def redirect_if_not_found
     redirect '/dragons' unless @dragon
   end
 
+  def redirect_if_not_owner
+    redirect '/dragons' unless @dragon.user == current_user
+  end
 end

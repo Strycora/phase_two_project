@@ -3,7 +3,10 @@
 <p>Recently Viewed: <%=@dragon ? @dragon.name : "Haven't viewed any dragons."%></p>
 
 <ul>
+ 
   <% @dragons.each do |dragon| %>
-    <li><a href="/dragons/<%= dragon.id%>"> <%=dragon.name%></a></li>
+  <%if dragon.user_id == @user.id%>
+    <li><a href="/dragons/<%= "#{dragon.id}"%>"> <%=dragon.name%></a></li>
+  <%end%>
   <%end%>
 </ul>
