@@ -3,23 +3,58 @@
 <form action="/dragons" method="post">
         <div class="input-field">
           <input id="name" name="dragon[name]" type="text" class="validate">
-          <label for="dragon[name]">Name</label>
+          <label for="dragon[name]">Name:</label>
+        </div>
+        <h5> Color: </h5>
+        <div class="input-field">
+        <p>
+            <label for="Red" >
+            <input id="Red" name="dragon[color]" type="radio" value="Red" />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+            <label for="Yellow" >
+            <input id="Yellow" name="dragon[color]" type="radio" value="Yellow" />
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+            <label for="Green" >
+            <input id="Green" name="dragon[color]" type="radio" value="Green" />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+            <label for="Black" >
+            <input id="Black" name="dragon[color]" type="radio" value="Black" />
+            <span>Black</span>
+          </label>
+        </p>
+        <p>
+            <label for="Blue" >
+            <input id="Blue" name="dragon[color]" type="radio" value="Blue" />
+            <span>Blue</span>
+          </label>
+        </p>
+        <p>
+            <label for="White" >
+            <input id="White" name="dragon[color]" type="radio" value="White" />
+            <span>White</span>
+          </label>
+        </p>
         </div>
         <div class="input-field">
-          <input id="color" name="dragon[color]" type="text" class="validate">
-          <label for="color">Color</label>
-        </div>
-        <div class="input-field">
-          <input id="breed]" name="dragon[breed]" type="text" class="validate">
-          <label for="breed">Breed</label>
+          <input id="breed" name="dragon[breed]" type="text" class="validate">
+          <label for="breed">Breed:</label>
         </div>
         <div class="input-field">
           <input id="personality" name="dragon[personality]" type="text" class="validate">
-          <label for="personality">Personality</label>
+          <label for="personality">Personality:</label>
         </div>
         <div class="input-field">
           <input id="treasure" name="dragon[treasure]" type="text" class="validate">
-          <label for="treasure">Treasure</label>
+          <label for="treasure">Treasure:</label>
         </div>
 
         <input type="submit" value="Document Dragon" class="btn red darken-5">
