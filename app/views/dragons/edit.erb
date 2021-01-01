@@ -6,10 +6,45 @@
           <input id="name" name="dragon[name]" type="text" class="validate" value="<%= @dragon.name%>">
           <label for="dragon[name]">Name</label>
         </div>
-        <div class="input-field">
-          <input id="color" name="dragon[color]" type="text" class="validate" value="<%=@dragon.color%>">
-          <label for="color">Color</label>
-        </div>
+      <h5> Color: </h5>
+      <div class="input-field">
+        <p>
+            <label for="Red" >
+            <input id="Red" name="dragon[color]" type="radio" value="Red"  <%='checked' if @dragon.color == "Red" %> />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+            <label for="Yellow" >
+            <input id="Yellow" name="dragon[color]" type="radio" value="Yellow" <%='checked' if @dragon.color == "Yellow" %>/>
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+            <label for="Green" >
+            <input id="Green" name="dragon[color]" type="radio" value="Green" <%='checked' if @dragon.color == "Green" %> />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+            <label for="Black" >
+            <input id="Black" name="dragon[color]" type="radio" value="Black" <%='checked' if @dragon.color == "Black" %>/>
+            <span>Black</span>
+          </label>
+        </p>
+        <p>
+            <label for="Blue" >
+            <input id="Blue" name="dragon[color]" type="radio" value="Blue" <%='checked' if @dragon.color == "Blue" %>/>
+            <span>Blue</span>
+          </label>
+        </p>
+        <p>
+            <label for="White" >
+            <input id="White" name="dragon[color]" type="radio" value="White" <%='checked' if @dragon.color == "White" %>/>
+            <span>White</span>
+          </label>
+        </p>
+      </div>
         <div class="input-field">
           <input id="breed" name="dragon[breed]" type="text" class="validate" value="<%=@dragon.breed%>">
           <label for="breed">Breed</label>
