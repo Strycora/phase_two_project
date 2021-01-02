@@ -43,11 +43,33 @@
             <span>White</span>
           </label>
         </p>
+        <p>
+            <label for="Purple" >
+            <input id="Purple" name="dragon[color]" type="radio" value="Purple" />
+            <span>Purple</span>
+          </label>
+        </p>
         </div>
-        <div class="input-field">
-          <input id="breed" name="dragon[breed]" type="text" class="validate">
+
+          <div class="input-field col s12">
+          <select name="dragon[breed]" >
+            <option  value="" disabled selected>Choose Dragon Breed</option>
+            <option value="Standard Western Dragon">Standard Western Dragon</option>
+            <option value="Oriental Dragon">Oriental Dragon</option>
+            <option value="Dragonnet">Dragonnet</option>
+            <option value="Wyvern">Wyvern</option>
+            <option value="Quetzalcoatl">Quetzalcoatl</option>
+          </select>
+          <label>Dragon Breed Selection</label>
+         </div>
+        
+        
+       <!--<div class="input-field">--> 
+        <!--  <input id="breed" name="dragon[breed]" type="text" class="validate">
           <label for="breed">Breed:</label>
-        </div>
+         </div> -->
+
+
         <div class="input-field">
           <input id="personality" name="dragon[personality]" type="text" class="validate">
           <label for="personality">Personality:</label>

@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
 
 
   get "/" do
+    redirect '/signup'
     erb :welcome
   end
 

@@ -57,8 +57,8 @@ class DragonsController < ApplicationController
   private
 
   def find_dragon
-    # @dragon = Dragon.find_by_id(params[:id])
-    @dragon = Dragon.find_by_id(session[:dragon_id])
+     @dragon = Dragon.find_by_id(params[:id])
+    # @dragon = Dragon.find_by_id(session[:dragon_id])
   end
 
   def redirect_if_not_found
