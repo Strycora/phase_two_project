@@ -62,22 +62,32 @@
           </select>
           <label>Dragon Breed Selection</label>
          </div>
-        
-        
-       <!--<div class="input-field">--> 
-        <!--  <input id="breed" name="dragon[breed]" type="text" class="validate">
-          <label for="breed">Breed:</label>
-         </div> -->
+
+        <div class="input-field col s12">
+          <select name="dragon[personality]" >
+            <option  value="" selected disabled>Choose Dragon Personality</option>
+            <option value="Fierce">Fierce</option>
+            <option value="Shy"  >Shy</option>
+            <option value="Friendly" >Friendly</option>
+            <option value="Mysterious" >Mysterious</option>
+            <option value="Eccentric" >Eccentric</option>
+          </select>
+          <label>Dragon Personality Selection</label>
+         </div>
 
 
-        <div class="input-field">
-          <input id="personality" name="dragon[personality]" type="text" class="validate">
-          <label for="personality">Personality:</label>
-        </div>
-        <div class="input-field">
-          <input id="treasure" name="dragon[treasure]" type="text" class="validate">
-          <label for="treasure">Treasure:</label>
-        </div>
+        <div class="input-field col s12">
+          <select name="dragon[treasure]" >
+            <option  value="" selected disabled>Choose Dragon Treasure</option>
+            <option value="Rubies">Rubies</option>
+            <option value="Sapphires"  >Sapphires</option>
+            <option value="Diamonds" >Diamonds</option>
+            <option value="Onyx" >Onyx</option>
+            <option value="Emeralds" >Emeralds</option>
+          </select>
+          <label>Dragon Treasure Selection</label>
+         </div>
+        
 
         <input type="submit" value="Document Dragon" class="btn red darken-5">
 </form>

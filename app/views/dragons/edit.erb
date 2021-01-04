@@ -64,19 +64,32 @@
           <label>Dragon Breed Selection</label>
          </div>
        
-       
-       <!-- <div class="input-field">
-          <input id="breed" name="dragon[breed]" type="text" class="validate" value="<%=@dragon.breed%>">
-          <label for="breed">Breed</label>
-        </div> -->
-        <div class="input-field">
-          <input id="personality" name="dragon[personality]" type="text" class="validate" value=<%=@dragon.personality%>>
-          <label for="personality">Personality</label>
-        </div>
-        <div class="input-field">
-          <input id="treasure" name="dragon[treasure]" type="text" class="validate" value=<%=@dragon.treasure%>>
-          <label for="treasure">Treasure</label>
-        </div>
+
+          <div class="input-field col s12">
+          <select name="dragon[personality]" >
+            <option  value="" disabled>Choose Dragon Personality</option>
+            <option value="Fierce" <%= 'selected' if @dragon.personality == "Fierce" %>>Fierce</option>
+            <option value="Shy" <%= 'selected' if @dragon.personality == "Shy" %> >Shy</option>
+            <option value="Friendly" <%= 'selected' if @dragon.personality == "Friendly" %>>Friendly</option>
+            <option value="Mysterious" <%= 'selected' if @dragon.personality == "Mysterious" %>>Mysterious</option>
+            <option value="Eccentric" <%= 'selected' if @dragon.personality == "Eccentric" %>>Eccentric</option>
+          </select>
+          <label>Dragon Personality Selection</label>
+         </div>
+
+         
+          <div class="input-field col s12">
+          <select name="dragon[treasure]" >
+            <option  value="" disabled>Choose Dragon Treasure</option>
+            <option value="Rubies" <%= 'selected' if @dragon.treasure == "Rubies" %>>Rubies</option>
+            <option value="Sapphires" <%= 'selected' if @dragon.treasure == "Sapphires" %> >Sapphires</option>
+            <option value="Diamonds" <%= 'selected' if @dragon.treasure == "Diamonds" %>>Diamonds</option>
+            <option value="Onyx" <%= 'selected' if @dragon.treasure == "Onyx" %>>Onyx</option>
+            <option value="Emeralds" <%= 'selected' if @dragon.treasure == "Emeralds" %>>Emeralds</option>
+          </select>
+          <label>Dragon Treasure Selection</label>
+         </div>
+
 
         <input type="submit" value="Update Dragon" class="btn red darken-5">
 </form>
