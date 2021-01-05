@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   get '/signup' do
-  
-  erb :'sessions/signup'
+    redirect_if_logged_in
+    erb :'sessions/signup'
   end
 
   post '/signup' do
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   get '/login' do
+    redirect_if_logged_in
     erb :'sessions/login'
   end
 

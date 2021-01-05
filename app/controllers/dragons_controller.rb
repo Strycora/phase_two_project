@@ -1,17 +1,20 @@
 class DragonsController < ApplicationController
 
-  get '/dragons' do 
+  get '/dragons' do
+    redirect_if_not_logged_in 
     @dragons = Dragon.all
-    find_dragon
+    @dragon = Dragon.find_by_id(session[:dragon_id])
     @user = current_user
     erb :'dragons/index'
   end
 
   get '/dragons/new' do
+    redirect_if_not_logged_in
     erb :'dragons/new'
   end
 
   get '/dragons/:id' do 
+    redirect_if_not_logged_in
     find_dragon
     session[:dragon_id] = @dragon.id if @dragon
     redirect_if_not_found
@@ -20,6 +23,7 @@ class DragonsController < ApplicationController
   end
   
   get '/dragons/:id/edit' do
+    redirect_if_not_logged_in
     find_dragon
     redirect_if_not_found
     redirect_if_not_owner
@@ -27,13 +31,14 @@ class DragonsController < ApplicationController
   end 
 
   post '/dragons' do
-    dragon = Dragon.create(name: params[:dragon][:name], color: params[:dragon][:color], breed: params[:dragon][:breed], personality: params[:dragon][:personality], treasure: params[:dragon][:treasure],  user_id: current_user.id)
-    session[:dragon_id] = dragon.id
+    dragon = current_user.dragons.build(params[:dragon])
     if dragon.save
+      session[:dragon_id] = dragon.id
       redirect '/dragons'
     else
       redirect 'dragons/new'
     end
+
   end
 
   patch '/dragons/:id' do
@@ -58,7 +63,6 @@ class DragonsController < ApplicationController
 
   def find_dragon
      @dragon = Dragon.find_by_id(params[:id])
-    # @dragon = Dragon.find_by_id(session[:dragon_id])
   end
 
   def redirect_if_not_found
