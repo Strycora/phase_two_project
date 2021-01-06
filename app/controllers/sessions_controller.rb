@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/dragons"
     else 
+      flash[:errors] = user.errors.full_messages
       redirect "/signup"
     end
   end
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/dragons'
     else
+      flash[:errors] = "Invalid login"
       redirect '/login'
     end
   end

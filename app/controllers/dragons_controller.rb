@@ -16,9 +16,9 @@ class DragonsController < ApplicationController
   get '/dragons/:id' do 
     redirect_if_not_logged_in
     find_dragon
-    session[:dragon_id] = @dragon.id if @dragon
     redirect_if_not_found
     redirect_if_not_owner
+    session[:dragon_id] = @dragon.id if @dragon
     erb :'dragons/show'
   end
   
@@ -36,6 +36,7 @@ class DragonsController < ApplicationController
       session[:dragon_id] = dragon.id
       redirect '/dragons'
     else
+      flash[:errors] = dragon.errors.full_messages
       redirect 'dragons/new'
     end
 
@@ -48,6 +49,7 @@ class DragonsController < ApplicationController
     if @dragon.update(params[:dragon])
       redirect "/dragons/#{@dragon.id}"
     else
+      flash[:errors] = ["Dragon must have a name"]
       redirect "/dragons/#{@dragon.id}/edit"
     end
   end
@@ -66,10 +68,12 @@ class DragonsController < ApplicationController
   end
 
   def redirect_if_not_found
+    flash[:errors] = ["Dragon not found"] unless @dragon
     redirect '/dragons' unless @dragon
   end
 
   def redirect_if_not_owner
+    flash[:errors] = ["That is not your dragon!"] unless @dragon.user == current_user
     redirect '/dragons' unless @dragon.user == current_user
   end
 end
