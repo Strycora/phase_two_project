@@ -4,6 +4,48 @@
 <p>Personality: <%= @dragon.personality%> </p>
 <p>Treasure: <%= @dragon.treasure %> </p>
 
+<%if @dragon.color == "Blue" %>
+<div>
+<img src="/images/blue_dragon.jpeg" alt="Blue Dragon">
+</div>
+<%end%>
+
+<%if @dragon.color == "Black" %>
+<div>
+<img src="/images/black_dragon.jpg" alt="Black Dragon">
+</div>
+<%end%>
+
+<%if @dragon.color == "Green" %>
+<div>
+<img src="/images/green_dragon.jpg" alt="Green Dragon">
+</div>
+<%end%>
+
+<%if @dragon.color == "Red" %>
+<div>
+<img src="/images/red_dragon.jpg" alt="Red Dragon">
+<%end%>
+</div>
+
+<%if @dragon.color == "White" %>
+<div>
+<img src="/images/white_dragon.jpg" alt="White Dragon">
+</div>
+<%end%>
+
+<%if @dragon.color == "Purple" %>
+<div>
+<img src="/images/purple_dragon.jpg" alt="Purple Dragon">
+</div>
+<%end%>
+
+<%if @dragon.color == "Yellow" %>
+<div>
+<img src="/images/yellow_dragon.jpg" alt="Yellow Dragon">
+</div>
+<%end%>
+
 <a href="/dragons/<%= @dragon.id %>/edit" class="btn">Edit</a> &nbsp;
 
 <form action="/dragons/<%=@dragon.id%>" method="post">

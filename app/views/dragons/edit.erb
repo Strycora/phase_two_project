@@ -6,22 +6,90 @@
           <input id="name" name="dragon[name]" type="text" class="validate" value="<%= @dragon.name%>">
           <label for="dragon[name]">Name</label>
         </div>
-        <div class="input-field">
-          <input id="color" name="dragon[color]" type="text" class="validate" value="<%=@dragon.color%>">
-          <label for="color">Color</label>
-        </div>
-        <div class="input-field">
-          <input id="breed]" name="dragon[breed]" type="text" class="validate" value="<%=@dragon.breed%>">
-          <label for="breed">Breed</label>
-        </div>
-        <div class="input-field">
-          <input id="personality" name="dragon[personality]" type="text" class="validate" value=<%=@dragon.personality%>>
-          <label for="personality">Personality</label>
-        </div>
-        <div class="input-field">
-          <input id="treasure" name="dragon[treasure]" type="text" class="validate" value=<%=@dragon.treasure%>>
-          <label for="treasure">Treasure</label>
-        </div>
+      <h5> Color: </h5>
+      <div class="input-field">
+        <p>
+            <label for="Red" >
+            <input id="Red" name="dragon[color]" type="radio" value="Red"  <%='checked' if @dragon.color == "Red" %> />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+            <label for="Yellow" >
+            <input id="Yellow" name="dragon[color]" type="radio" value="Yellow" <%='checked' if @dragon.color == "Yellow" %>/>
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+            <label for="Green" >
+            <input id="Green" name="dragon[color]" type="radio" value="Green" <%='checked' if @dragon.color == "Green" %> />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+            <label for="Black" >
+            <input id="Black" name="dragon[color]" type="radio" value="Black" <%='checked' if @dragon.color == "Black" %>/>
+            <span>Black</span>
+          </label>
+        </p>
+        <p>
+            <label for="Blue" >
+            <input id="Blue" name="dragon[color]" type="radio" value="Blue" <%='checked' if @dragon.color == "Blue" %>/>
+            <span>Blue</span>
+          </label>
+        </p>
+        <p>
+            <label for="White" >
+            <input id="White" name="dragon[color]" type="radio" value="White" <%='checked' if @dragon.color == "White" %>/>
+            <span>White</span>
+          </label>
+        </p>
+        <p>
+            <label for="Purple" >
+            <input id="Purple" name="dragon[color]" type="radio" value="Purple" <%='checked' if @dragon.color == "Purple" %>/>
+            <span>Purple</span>
+          </label>
+        </p>
+      </div>
+
+        <div class="input-field col s12">
+          <select name="dragon[breed]" >
+            <option  value="" disabled>Choose Dragon Breed</option>
+            <option value="Standard Western Dragon" <%= 'selected' if @dragon.breed == "Standard Western Dragon" %>>Standard Western Dragon</option>
+            <option value="Oriental Dragon" <%= 'selected' if @dragon.breed == "Oriental Dragon" %> >Oriental Dragon</option>
+            <option value="Dragonnet" <%= 'selected' if @dragon.breed == "Dragonnet" %>>Dragonnet</option>
+            <option value="Wyvern" <%= 'selected' if @dragon.breed == "Wyvern" %>>Wyvern</option>
+            <option value="Quetzalcoatl" <%= 'selected' if @dragon.breed == "Quetzalcoatl" %>>Quetzalcoatl</option>
+          </select>
+          <label>Dragon Breed Selection</label>
+         </div>
+       
+
+          <div class="input-field col s12">
+          <select name="dragon[personality]" >
+            <option  value="" disabled>Choose Dragon Personality</option>
+            <option value="Fierce" <%= 'selected' if @dragon.personality == "Fierce" %>>Fierce</option>
+            <option value="Shy" <%= 'selected' if @dragon.personality == "Shy" %> >Shy</option>
+            <option value="Friendly" <%= 'selected' if @dragon.personality == "Friendly" %>>Friendly</option>
+            <option value="Mysterious" <%= 'selected' if @dragon.personality == "Mysterious" %>>Mysterious</option>
+            <option value="Eccentric" <%= 'selected' if @dragon.personality == "Eccentric" %>>Eccentric</option>
+          </select>
+          <label>Dragon Personality Selection</label>
+         </div>
+
+         
+          <div class="input-field col s12">
+          <select name="dragon[treasure]" >
+            <option  value="" disabled>Choose Dragon Treasure</option>
+            <option value="Rubies" <%= 'selected' if @dragon.treasure == "Rubies" %>>Rubies</option>
+            <option value="Sapphires" <%= 'selected' if @dragon.treasure == "Sapphires" %> >Sapphires</option>
+            <option value="Diamonds" <%= 'selected' if @dragon.treasure == "Diamonds" %>>Diamonds</option>
+            <option value="Onyx" <%= 'selected' if @dragon.treasure == "Onyx" %>>Onyx</option>
+            <option value="Emeralds" <%= 'selected' if @dragon.treasure == "Emeralds" %>>Emeralds</option>
+          </select>
+          <label>Dragon Treasure Selection</label>
+         </div>
+
 
         <input type="submit" value="Update Dragon" class="btn red darken-5">
 </form>

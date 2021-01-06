@@ -3,24 +3,91 @@
 <form action="/dragons" method="post">
         <div class="input-field">
           <input id="name" name="dragon[name]" type="text" class="validate">
-          <label for="dragon[name]">Name</label>
+          <label for="dragon[name]">Name:</label>
         </div>
+        <h5> Color: </h5>
         <div class="input-field">
-          <input id="color" name="dragon[color]" type="text" class="validate">
-          <label for="color">Color</label>
+        <p>
+            <label for="Red" >
+            <input id="Red" name="dragon[color]" type="radio" value="Red" />
+            <span>Red</span>
+          </label>
+        </p>
+        <p>
+            <label for="Yellow" >
+            <input id="Yellow" name="dragon[color]" type="radio" value="Yellow" />
+            <span>Yellow</span>
+          </label>
+        </p>
+        <p>
+            <label for="Green" >
+            <input id="Green" name="dragon[color]" type="radio" value="Green" />
+            <span>Green</span>
+          </label>
+        </p>
+        <p>
+            <label for="Black" >
+            <input id="Black" name="dragon[color]" type="radio" value="Black" />
+            <span>Black</span>
+          </label>
+        </p>
+        <p>
+            <label for="Blue" >
+            <input id="Blue" name="dragon[color]" type="radio" value="Blue" />
+            <span>Blue</span>
+          </label>
+        </p>
+        <p>
+            <label for="White" >
+            <input id="White" name="dragon[color]" type="radio" value="White" />
+            <span>White</span>
+          </label>
+        </p>
+        <p>
+            <label for="Purple" >
+            <input id="Purple" name="dragon[color]" type="radio" value="Purple" />
+            <span>Purple</span>
+          </label>
+        </p>
         </div>
-        <div class="input-field">
-          <input id="breed]" name="dragon[breed]" type="text" class="validate">
-          <label for="breed">Breed</label>
-        </div>
-        <div class="input-field">
-          <input id="personality" name="dragon[personality]" type="text" class="validate">
-          <label for="personality">Personality</label>
-        </div>
-        <div class="input-field">
-          <input id="treasure" name="dragon[treasure]" type="text" class="validate">
-          <label for="treasure">Treasure</label>
-        </div>
+
+          <div class="input-field col s12">
+          <select name="dragon[breed]" >
+            <option  value="" disabled selected>Choose Dragon Breed</option>
+            <option value="Standard Western Dragon">Standard Western Dragon</option>
+            <option value="Oriental Dragon">Oriental Dragon</option>
+            <option value="Dragonnet">Dragonnet</option>
+            <option value="Wyvern">Wyvern</option>
+            <option value="Quetzalcoatl">Quetzalcoatl</option>
+          </select>
+          <label>Dragon Breed Selection</label>
+         </div>
+
+        <div class="input-field col s12">
+          <select name="dragon[personality]" >
+            <option  value="" selected disabled>Choose Dragon Personality</option>
+            <option value="Fierce">Fierce</option>
+            <option value="Shy"  >Shy</option>
+            <option value="Friendly" >Friendly</option>
+            <option value="Mysterious" >Mysterious</option>
+            <option value="Eccentric" >Eccentric</option>
+          </select>
+          <label>Dragon Personality Selection</label>
+         </div>
+
+
+        <div class="input-field col s12">
+          <select name="dragon[treasure]" >
+            <option  value="" selected disabled>Choose Dragon Treasure</option>
+            <option value="Rubies">Rubies</option>
+            <option value="Sapphires"  >Sapphires</option>
+            <option value="Diamonds" >Diamonds</option>
+            <option value="Onyx" >Onyx</option>
+            <option value="Emeralds" >Emeralds</option>
+          </select>
+          <label>Dragon Treasure Selection</label>
+         </div>
+        
 
         <input type="submit" value="Document Dragon" class="btn red darken-5">
 </form>

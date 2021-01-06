@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   get '/signup' do
-  
-  erb :'sessions/signup'
+    redirect_if_logged_in
+    erb :'sessions/signup'
   end
 
   post '/signup' do
@@ -10,11 +10,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/dragons"
     else 
+      flash[:errors] = user.errors.full_messages
       redirect "/signup"
     end
   end
 
   get '/login' do
+    redirect_if_logged_in
     erb :'sessions/login'
   end
 
@@ -24,6 +26,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/dragons'
     else
+      flash[:errors] = "Invalid login"
       redirect '/login'
     end
   end
