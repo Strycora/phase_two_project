@@ -1,4 +1,4 @@
-The Dragon Organizer is the premier tool for adventurers who seek to document the dragons they are looking for or have found in the wild. The Dragon Organizer allows a user to document a new dragon, edit a dragon that they have listed, or delete a dragon. Run bundle install and go to the Shotgun server to start the program! 
+The Dragon Organizer is the premier tool for adventurers who seek to document the dragons they are looking for or have found in the wild. The Dragon Organizer allows a user to document a new dragon, edit a dragon that they have listed, or delete a dragon. Each user will sign up and have many dragons, and each dragon will belong to a user. To contribute, clone this repo and make edits as you wish. Run bundle install and go to the Shotgun server to start the program! 
 
 License
 https://github.com/Strycora/phase_two_project/blob/main/LICENSE

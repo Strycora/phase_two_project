@@ -34,7 +34,7 @@ class DragonsController < ApplicationController
     dragon = current_user.dragons.build(params[:dragon])
     if dragon.save
       session[:dragon_id] = dragon.id
-      redirect '/dragons'
+      redirect "/dragons"
     else
       flash[:errors] = dragon.errors.full_messages
       redirect 'dragons/new'
