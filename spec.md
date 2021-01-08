@@ -11,7 +11,7 @@ Specs:
 - [X] Ensure that users can't modify content created by other users - Only the user can see User's own dragons
 - [X] Include user input validations - User must enter unique username, password, fill out all of the attributes for Dragon
 - [X] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) -Flash messages let the user know about bad requests
-- [X] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code - Description, install instructions, no contributor's guide (project is not to be changed), license link included
+- [X] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code - Description, install instructions, contributor's guide , license link included
 
 Confirm
 - [X] You have a large number of small Git commits 

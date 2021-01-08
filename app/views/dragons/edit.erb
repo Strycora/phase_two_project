@@ -2,10 +2,12 @@
 
 <form action="/dragons/<%= @dragon.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
+        
         <div class="input-field">
           <input id="name" name="dragon[name]" type="text" class="validate" value="<%= @dragon.name%>">
           <label for="dragon[name]">Name</label>
         </div>
+
       <h5> Color: </h5>
       <div class="input-field">
         <p>
@@ -51,6 +53,8 @@
           </label>
         </p>
       </div>
+         <div>
+        </div>&nbsp;
 
         <div class="input-field col s12">
           <select name="dragon[breed]" >
